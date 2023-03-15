@@ -1,28 +1,34 @@
-import {StyleSheet, View} from 'react-native';
+import {Pressable, StyleSheet, View} from 'react-native';
 
 import {Icon} from './Icon';
 import React from 'react';
 
 type CheckboxParams = {
   mode: 'active' | 'multiple' | 'none';
+  onPress: () => void;
+  testID?: string;
 };
 
 /**
  * Functional Component to return a checkbox
  * The check mark is the only thing it isn't made with style
  */
-export default function Checkbox({mode}: CheckboxParams) {
+export default function Checkbox({mode, onPress, testID}: CheckboxParams) {
   // CheckMark icon to show when active mode is enabled
   const checkMark = '../assets/images/check-mark.png';
   return (
-    <View style={styles.container}>
+    <Pressable onPress={onPress} testID={testID} style={styles.container}>
       {/* We are going to take the corresponding style we made in stylesheet styles, active mode is the only one mode which not made with styling */}
-      {mode !== 'active' && <View style={styles[mode]} />}
+      {mode !== 'active' && <View testID='Checkbox.viewStyle' style={styles[mode]} />}
       {/* if active, the need to use the icon asset image to show it, this is the only mode which is different */}
       {mode === 'active' && (
-        <Icon name={require(checkMark)} style={styles.active} />
+        <Icon
+          testID="Checkbox.icon"
+          name={require(checkMark)}
+          style={styles.active}
+        />
       )}
-    </View>
+    </Pressable>
   );
 }
 

@@ -12,6 +12,7 @@ type IconParams = {
   name: ImageSourcePropType;
   style: StyleProp<ImageStyle>;
   props?: ImageProps;
+  testID?: string;
 };
 
 /**
@@ -21,6 +22,6 @@ type IconParams = {
  * Using a image from url is not a good pratice except if you have your own api ! better to have it in the project
  * @param {string} text
  */
-export function Icon({name, style, props}: IconParams) {
-  return <Image source={name} style={style} {...props} />;
+export function Icon({name, style, testID, props}: IconParams) {
+  return <Image testID={testID} source={name} style={style} {...props} />;
 }

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render the searchInput as snapShot expected 1`] = `
+<TextInput
+  placeholder="Search input"
+  style={
+    {
+      "backgroundColor": "lightgray",
+      "borderRadius": 5,
+      "marginBottom": 24,
+      "marginLeft": 16,
+      "marginRight": 16,
+      "marginTop": 24,
+      "padding": 20,
+    }
+  }
+/>
+`;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render the text as snapShot we expected 1`] = `
+<Text
+  style={
+    [
+      {},
+      undefined,
+    ]
+  }
+>
+  Hello World
+</Text>
+`;

@@ -17,6 +17,7 @@ type UserCardProps = {
   user: User;
   setSelected: (user: User) => void;
   selected: boolean;
+  testID?: string;
 };
 
 /**
@@ -27,7 +28,12 @@ type UserCardProps = {
  * @param {boolean} selected
  * Manage the status of the checkbox inside the card
  */
-export default function UserCard({user, setSelected, selected}: UserCardProps) {
+export default function UserCard({
+  user,
+  setSelected,
+  selected,
+  testID,
+}: UserCardProps) {
   const onPressViewProfile = () => {
     // if the user has a html url
     if (user?.html_url) {
@@ -40,13 +46,15 @@ export default function UserCard({user, setSelected, selected}: UserCardProps) {
     setSelected(user);
   };
   return (
-    <View style={styles.container}>
+    <View testID={testID} style={styles.container}>
       <View style={styles.infosUserContainer}>
-        <Pressable
-          onPress={onPressSelectedUser}
-          style={styles.checkboxPosition}>
-          <Checkbox mode={selected ? 'active' : 'none'} />
-        </Pressable>
+        <View style={styles.checkboxPosition}>
+          <Checkbox
+            onPress={onPressSelectedUser}
+            testID="UserCard.CheckBox"
+            mode={selected ? 'active' : 'none'}
+          />
+        </View>
         <View style={styles.infoUser}>
           <Image style={styles.tinyLogo} source={{uri: user?.avatar_url}} />
           <CustomText textType="title">{user?.id}</CustomText>
@@ -54,7 +62,11 @@ export default function UserCard({user, setSelected, selected}: UserCardProps) {
         </View>
       </View>
       <View style={styles.buttonContainer}>
-        <Button onPress={onPressViewProfile}>View profile</Button>
+        <Button
+          testID="UserCard.ViewProfileButton"
+          onPress={onPressViewProfile}>
+          View profile
+        </Button>
       </View>
     </View>
   );

@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render the checkbox with active mode as snapShot we expected 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "backgroundColor": "#44a1f8",
+      "borderRadius": 4,
+      "borderWidth": 4,
+      "height": 20,
+      "justifyContent": "center",
+      "width": 20,
+    }
+  }
+>
+  <Image
+    source={
+      {
+        "testUri": "../../../assets/images/check-mark.png",
+      }
+    }
+    style={
+      {
+        "height": 13,
+        "width": 13,
+      }
+    }
+    testID="Checkbox.icon"
+  />
+</View>
+`;

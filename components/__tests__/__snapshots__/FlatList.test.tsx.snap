@@ -1,0 +1,456 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render the Flatlist with our userCard as snapShot excepted 1`] = `
+<RCTScrollView
+  data={
+    [
+      {
+        "avatar_url": "https://reactnative.dev/img/tiny_logo.png",
+        "html_url": "https://github.com/Seb-Carre",
+        "id": 404,
+        "login": "sebastien",
+      },
+      {
+        "avatar_url": "https://reactnative.dev/img/tiny_logo.png",
+        "html_url": "https://github.com/eric",
+        "id": 500,
+        "login": "eric",
+      },
+    ]
+  }
+  getItem={[Function]}
+  getItemCount={[Function]}
+  keyExtractor={[Function]}
+  onContentSizeChange={[Function]}
+  onLayout={[Function]}
+  onMomentumScrollBegin={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  stickyHeaderIndices={[]}
+  viewabilityConfigCallbackPairs={[]}
+>
+  <View>
+    <View
+      onFocusCapture={[Function]}
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        style={
+          {
+            "backgroundColor": "lightgray",
+            "borderRadius": 20,
+            "height": 750,
+            "marginBottom": 16,
+            "width": "100%",
+          }
+        }
+        testID="App.UserCard"
+      >
+        <View
+          style={
+            {
+              "flex": 1,
+              "flexDirection": "row",
+              "padding": 20,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "padding": 25,
+                "position": "absolute",
+                "zIndex": 1,
+              }
+            }
+          >
+            <View
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": undefined,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "backgroundColor": "#44a1f8",
+                  "borderRadius": 4,
+                  "borderWidth": 4,
+                  "height": 20,
+                  "justifyContent": "center",
+                  "width": 20,
+                }
+              }
+              testID="UserCard.CheckBox"
+            >
+              <Image
+                source={
+                  {
+                    "testUri": "../../../assets/images/check-mark.png",
+                  }
+                }
+                style={
+                  {
+                    "height": 13,
+                    "width": 13,
+                  }
+                }
+                testID="Checkbox.icon"
+              />
+            </View>
+          </View>
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flex": 1,
+              }
+            }
+          >
+            <Image
+              source={
+                {
+                  "uri": "https://reactnative.dev/img/tiny_logo.png",
+                }
+              }
+              style={
+                {
+                  "borderRadius": 35,
+                  "height": 70,
+                  "width": 70,
+                }
+              }
+            />
+            <Text
+              style={
+                [
+                  {
+                    "fontSize": 20,
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              404
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "fontSize": 20,
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              sebastien
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "margin": 15,
+            }
+          }
+        >
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "alignItems": "center",
+                "backgroundColor": "#00a2ff",
+                "borderRadius": 10,
+                "paddingHorizontal": 50,
+                "paddingVertical": 20,
+              }
+            }
+            testID="UserCard.ViewProfileButton"
+          >
+            <Text
+              style={
+                [
+                  {},
+                  {
+                    "fontSize": 20,
+                  },
+                ]
+              }
+            >
+              View profile
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      onFocusCapture={[Function]}
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        style={
+          {
+            "backgroundColor": "lightgray",
+            "borderRadius": 20,
+            "height": 750,
+            "marginBottom": 16,
+            "width": "100%",
+          }
+        }
+        testID="App.UserCard"
+      >
+        <View
+          style={
+            {
+              "flex": 1,
+              "flexDirection": "row",
+              "padding": 20,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "padding": 25,
+                "position": "absolute",
+                "zIndex": 1,
+              }
+            }
+          >
+            <View
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": undefined,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "backgroundColor": "#44a1f8",
+                  "borderRadius": 4,
+                  "borderWidth": 4,
+                  "height": 20,
+                  "justifyContent": "center",
+                  "width": 20,
+                }
+              }
+              testID="UserCard.CheckBox"
+            >
+              <Image
+                source={
+                  {
+                    "testUri": "../../../assets/images/check-mark.png",
+                  }
+                }
+                style={
+                  {
+                    "height": 13,
+                    "width": 13,
+                  }
+                }
+                testID="Checkbox.icon"
+              />
+            </View>
+          </View>
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flex": 1,
+              }
+            }
+          >
+            <Image
+              source={
+                {
+                  "uri": "https://reactnative.dev/img/tiny_logo.png",
+                }
+              }
+              style={
+                {
+                  "borderRadius": 35,
+                  "height": 70,
+                  "width": 70,
+                }
+              }
+            />
+            <Text
+              style={
+                [
+                  {
+                    "fontSize": 20,
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              500
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "fontSize": 20,
+                    "fontWeight": "600",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              eric
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "margin": 15,
+            }
+          }
+        >
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "alignItems": "center",
+                "backgroundColor": "#00a2ff",
+                "borderRadius": 10,
+                "paddingHorizontal": 50,
+                "paddingVertical": 20,
+              }
+            }
+            testID="UserCard.ViewProfileButton"
+          >
+            <Text
+              style={
+                [
+                  {},
+                  {
+                    "fontSize": 20,
+                  },
+                ]
+              }
+            >
+              View profile
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

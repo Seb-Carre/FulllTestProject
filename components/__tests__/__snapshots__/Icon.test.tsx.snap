@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render the icon as snapShot expected 1`] = `
+<Image
+  source={
+    {
+      "testUri": "../../../assets/images/check-mark.png",
+    }
+  }
+  style={
+    {
+      "flex": 1,
+    }
+  }
+/>
+`;

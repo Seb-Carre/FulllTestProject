@@ -127,17 +127,18 @@ function App(): JSX.Element {
           <View style={styles.titleContainer}>
             <CustomText>Github Search</CustomText>
           </View>
-          <SearchInput onChangeText={onChangeText} />
+          <SearchInput testID="App.SearchInput" onChangeText={onChangeText} />
           <View style={styles.actionsContainer}>
-            <Pressable onPress={selectAllMethod}>
-              <Checkbox
-                mode={
-                  users &&
-                  users.length > 0 &&
-                  usersSelected.length === users.length ? 'multiple' : 'none'
-                }
-              />
-            </Pressable>
+            <Checkbox
+              mode={
+                users &&
+                users.length > 0 &&
+                usersSelected.length === users.length
+                  ? 'multiple'
+                  : 'none'
+              }
+              onPress={selectAllMethod}
+            />
             <CustomText style={styles.numberSelectedUsers}>
               {usersSelected.length}{' '}
               <CustomText style={styles.phraseSelectedUsers}>
@@ -147,30 +148,48 @@ function App(): JSX.Element {
             <View style={styles.iconButtons}>
               {/* You can't use a dynamic icon */}
               <IconButton
+                testID="App.CopyButton"
                 iconName={require('./assets/images/copy.png')}
                 onPress={duplicateUsers}
               />
               <IconButton
+                testID="App.DeleteButton"
                 iconName={require('./assets/images/trash.png')}
                 onPress={deleteUsers}
               />
             </View>
           </View>
           <View style={styles.listWrapper}>
-            {users && users.length > 1 && <FlatList style={styles.list} data={users} 
-              keyExtractor={(user, index) => index} // use the index for the keyExtractor, specially for the duplicated users
-              renderItem={({item}) => <UserCard user={item} setSelected={AddOrDeleteUserSelected} selected={checkIfUserExistsInSelectedUsers(item)}/>}>
-             </FlatList>}
-             {/* if the search don't give anything, this text will be visible */}
+            {users && users.length >= 1 && (
+              <FlatList
+                testID='App.FlatList'
+                style={styles.list}
+                data={users}
+                keyExtractor={(user, index) => index.toString()} // use the index for the keyExtractor, specially for the duplicated users
+                renderItem={({item}) => (
+                  <UserCard
+                    testID="App.UserCard"
+                    user={item}
+                    setSelected={AddOrDeleteUserSelected}
+                    selected={checkIfUserExistsInSelectedUsers(item)}
+                  />
+                )}></FlatList>
+            )}
+            {/* if the search don't give anything, this text will be visible */}
             {users !== undefined && users.length === 0 && (
-              <CustomText textType="title">No results found !</CustomText>
+              <CustomText testID="App.NoResultsFound" textType="title">
+                No results found !
+              </CustomText>
             )}
             {/* if the user has no text in TextInput, this text will be visible */}
-            {users === undefined && <View style={styles.containerFlex}>
-                <CustomText textType="title">
-                  Please ! Begin the search by typing the user you're looking for.
+            {users === undefined && (
+              <View style={styles.containerFlex}>
+                <CustomText testID="App.BeginSearch" textType="title">
+                  Please ! Begin the search by typing the user you're looking
+                  for.
                 </CustomText>
-              </View>}
+              </View>
+            )}
           </View>
         </View>
       </View>

@@ -6,14 +6,19 @@ import React from 'react';
 type IconButtonParams = {
   iconName: ImageSourcePropType;
   onPress: () => void;
+  testID?: string;
 };
 
 /**
  * Pressable button with a Icon inside !
  */
-export default function IconButton({iconName, onPress}: IconButtonParams) {
+export default function IconButton({
+  iconName,
+  onPress,
+  testID,
+}: IconButtonParams) {
   return (
-    <Pressable onPress={onPress}>
+    <Pressable testID={testID} onPress={onPress}>
       <Icon name={iconName} style={{...styles.icon}} />
     </Pressable>
   );
