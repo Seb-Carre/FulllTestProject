@@ -113,6 +113,7 @@ exports[`render the screen as snapShot expected 1`] = `
               "width": 20,
             }
           }
+          testID="App.CheckBox"
         >
           <View
             style={{}}

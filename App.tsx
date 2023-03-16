@@ -1,10 +1,4 @@
-import {
-  FlatList,
-  Pressable,
-  SafeAreaView,
-  StyleSheet,
-  View,
-} from 'react-native';
+import {FlatList, SafeAreaView, StyleSheet, View} from 'react-native';
 import React, {useRef, useState} from 'react';
 
 import Checkbox from './components/Checkbox';
@@ -130,6 +124,7 @@ function App(): JSX.Element {
           <SearchInput testID="App.SearchInput" onChangeText={onChangeText} />
           <View style={styles.actionsContainer}>
             <Checkbox
+              testID="App.CheckBox"
               mode={
                 users &&
                 users.length > 0 &&
