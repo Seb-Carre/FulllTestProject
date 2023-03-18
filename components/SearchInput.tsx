@@ -1,13 +1,19 @@
 import {StyleSheet, TextInput, TextInputProps} from 'react-native';
 
 import React from 'react';
+import text from '../translate/translate';
 
 /**
  * Extension of textInput from RN but with a small configuration
  */
 export default function SearchInput(props: TextInputProps) {
   return (
-    <TextInput style={styles.textInput} placeholder="Search input" {...props} />
+    <TextInput
+      style={styles.textInput}
+      placeholder={text('defaultTextPlaceholder')}
+      placeholderTextColor="black"
+      {...props}
+    />
   );
 }
 
@@ -20,5 +26,8 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 5,
     backgroundColor: 'lightgray',
+    fontWeight: '600',
+    fontSize: 17,
+    paddingLeft: 90,
   },
 });

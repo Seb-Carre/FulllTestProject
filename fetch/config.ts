@@ -1,4 +1,5 @@
 import {Alert} from 'react-native';
+import text from '../translate/translate';
 
 /** Default headers config */
 const headersConfig: HeadersInit_ = {'Content-Type': 'application/json'};
@@ -27,10 +28,7 @@ export default async function callAPI(method: string, url: string) {
       );
       // We'll show a warning if the user is approaching the rate limit
       if (remainingRequests === 5) {
-        Alert.alert(
-          'Warning',
-          'You can make 5 more searchs until you have to wait a time and be able to make new searchs',
-        );
+        Alert.alert(text('warning'), text('alertFiveSearchsRemaining'));
       }
     }
     const data = await response.json();
@@ -44,25 +42,24 @@ export default async function callAPI(method: string, url: string) {
       headersResponse.has('x-ratelimit-remaining') &&
       Number(headersResponse.get('x-ratelimit-remaining')) === 0
     ) {
-      const time = headersResponse.get('x-ratelimit-reset');
+      const time = headersResponse!.get('x-ratelimit-reset');
       if (time) {
         // We need to convert this Unix Time to a date to show the user when we can search again
         const date = new Date(Number(time) * 1000);
         Alert.alert(
-          'Error',
-          `You have exceeed the limit of searchs, please wait until : ${date}`,
+          text('error'),
+          `${text('alertNoMoreSearchsRemainingWithDate')} ${date}`,
         );
       } else {
-        Alert.alert(
-          'Error',
-          'You have exceeed the limit of searchs, take a break and try again',
-        );
+        Alert.alert(text('error'), text('alertNoMoreSearchsRemaining'));
       }
     } else {
       // Others requests errors will be showed in this alert
       Alert.alert(
-        'Error',
-        `A error has occured, with a code error ${response.status} ${response.statusText}`,
+        text('error'),
+        `${text('alertErrorGenericMessage')} ${response.status} ${
+          response.statusText
+        }`,
       );
     }
     return null;

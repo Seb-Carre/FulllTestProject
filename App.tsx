@@ -1,5 +1,15 @@
 import {FlatList, SafeAreaView, StyleSheet, View} from 'react-native';
 import React, {useRef, useState} from 'react';
+import {
+  appSearchInput,
+  checkbox,
+  copyButton,
+  deleteButton,
+  flatList,
+  textBeginSearch,
+  textNoFoundSearch,
+  userCard,
+} from './tests/IdentifiersTest';
 
 import Checkbox from './components/Checkbox';
 import CustomText from './components/CustomText';
@@ -7,7 +17,8 @@ import IconButton from './components/IconButton';
 import SearchInput from './components/SearchInput';
 import {User} from './types';
 import UserCard from './components/UserCard';
-import {getUsersBySearchText} from './services/api';
+import {getUsersBySearchText} from './services/apiRequests';
+import text from './translate/translate';
 
 function App(): JSX.Element {
   const [usersSelected, setUsersSelected] = useState<User[]>([]);
@@ -48,7 +59,7 @@ function App(): JSX.Element {
       const addUsers: User[] = JSON.parse(JSON.stringify(usersSelected));
       // To distict the duplication of the users, adding duplicated word is helping !
       addUsers.forEach(user => {
-        user.login = `${user.login} (duplicated)`;
+        user.login = `${user.login} ${text('duplicatedUser')}`;
       });
       // We finally setting the duplicates with the current list
       setUsers(prev => {
@@ -119,12 +130,12 @@ function App(): JSX.Element {
       <View style={styles.container}>
         <View style={styles.containerFlex}>
           <View style={styles.titleContainer}>
-            <CustomText>Github Search</CustomText>
+            <CustomText>{text('titlePage')}</CustomText>
           </View>
-          <SearchInput testID="App.SearchInput" onChangeText={onChangeText} />
+          <SearchInput testID={appSearchInput} onChangeText={onChangeText} />
           <View style={styles.actionsContainer}>
             <Checkbox
-              testID="App.CheckBox"
+              testID={checkbox}
               mode={
                 users &&
                 users.length > 0 &&
@@ -137,18 +148,18 @@ function App(): JSX.Element {
             <CustomText style={styles.numberSelectedUsers}>
               {usersSelected.length}{' '}
               <CustomText style={styles.phraseSelectedUsers}>
-                elements selected
+                {text('elementsSelected')}
               </CustomText>
             </CustomText>
             <View style={styles.iconButtons}>
               {/* You can't use a dynamic icon */}
               <IconButton
-                testID="App.CopyButton"
+                testID={copyButton}
                 iconName={require('./assets/images/copy.png')}
                 onPress={duplicateUsers}
               />
               <IconButton
-                testID="App.DeleteButton"
+                testID={deleteButton}
                 iconName={require('./assets/images/trash.png')}
                 onPress={deleteUsers}
               />
@@ -157,31 +168,31 @@ function App(): JSX.Element {
           <View style={styles.listWrapper}>
             {users && users.length >= 1 && (
               <FlatList
-                testID='App.FlatList'
+                testID={flatList}
                 style={styles.list}
                 data={users}
                 keyExtractor={(user, index) => index.toString()} // use the index for the keyExtractor, specially for the duplicated users
                 renderItem={({item}) => (
                   <UserCard
-                    testID="App.UserCard"
+                    testID={userCard + item.id} // to have unique id every time
                     user={item}
                     setSelected={AddOrDeleteUserSelected}
                     selected={checkIfUserExistsInSelectedUsers(item)}
                   />
-                )}></FlatList>
+                )}
+              />
             )}
             {/* if the search don't give anything, this text will be visible */}
             {users !== undefined && users.length === 0 && (
-              <CustomText testID="App.NoResultsFound" textType="title">
-                No results found !
+              <CustomText testID={textNoFoundSearch} textType="title">
+                {text('textNoResultsFound')}
               </CustomText>
             )}
             {/* if the user has no text in TextInput, this text will be visible */}
             {users === undefined && (
               <View style={styles.containerFlex}>
-                <CustomText testID="App.BeginSearch" textType="title">
-                  Please ! Begin the search by typing the user you're looking
-                  for.
+                <CustomText testID={textBeginSearch} textType="title">
+                  {text('textBeginSearch')}
                 </CustomText>
               </View>
             )}

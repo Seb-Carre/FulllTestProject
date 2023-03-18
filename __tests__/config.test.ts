@@ -4,7 +4,8 @@ import {
   headers,
   headersWithRateLimit,
   headersWithRateLimit5,
-} from '../utils/mockObjects';
+  headersWithRateLimitAndNoResetTime,
+} from '../tests/mockObjects';
 
 import {Alert} from 'react-native';
 import callAPI from '../fetch/config';
@@ -73,7 +74,7 @@ it('test the function with a error return', async () => {
   );
 });
 
-it('test the function with a 403 error', async () => {
+it('test the function with a 403 error with the excedeed rate limit', async () => {
   // For this case, we are going to pass a special header with the right info about the rate limit and the code return 403
   fetchMock.mockResponseOnce(JSON.stringify(fakeUserResponseWithNoData), {
     headers: headersWithRateLimit,
@@ -95,6 +96,29 @@ it('test the function with a 403 error', async () => {
       expect(Alert.alert).toHaveBeenCalledWith(
         'Error',
         `You have exceeed the limit of searchs, please wait until : ${date}`,
+      );
+    },
+    {timeout: 2000},
+  );
+});
+
+it('test the function with a 403 error and if there is no rate limit reset time found', async () => {
+  // For this case, we are going to pass a special header with the right info about the rate limit and the code return 403
+  fetchMock.mockResponseOnce(JSON.stringify(fakeUserResponseWithNoData), {
+    headers: headersWithRateLimitAndNoResetTime,
+    status: 403,
+  });
+  // Alert RN is being called if the rate limit is zero and with a code error 403
+  jest.spyOn(Alert, 'alert');
+  const apiCall = await callAPI('GET', '');
+  // As with error 500 with return a null
+  expect(apiCall).toBeNull();
+  await waitFor(
+    () => {
+      // The message here is exactly what we show to user if the rate limit is 0 with an error 403
+      expect(Alert.alert).toHaveBeenCalledWith(
+        'Error',
+        'You have exceeed the limit of searchs, take a break and try again',
       );
     },
     {timeout: 2000},

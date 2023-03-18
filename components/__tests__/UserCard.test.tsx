@@ -38,7 +38,7 @@ it('render the user card and click on the checkBox', () => {
   );
 
   // Making a press event and our mock function to be called
-  fireEvent.press(getByTestId('UserCard.CheckBox'));
+  fireEvent.press(getByTestId('UserCard.CheckBox' + user.id));
   expect(setSelectedMock).toBeCalled();
 });
 
@@ -49,7 +49,7 @@ it('render the user card and click on view profile button', () => {
     <UserCard user={user} setSelected={setSelectedMock} selected={selected} />,
   );
 
-  fireEvent.press(getByTestId('UserCard.ViewProfileButton'));
+  fireEvent.press(getByTestId('UserCard.ViewProfileButton' + user.id));
   // We expect that the url is called is the url html.url to see his profile
   expect(spy).toHaveBeenCalledWith(user.html_url);
 });

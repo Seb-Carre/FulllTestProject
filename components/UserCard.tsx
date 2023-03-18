@@ -1,11 +1,4 @@
-import {
-  Dimensions,
-  Image,
-  Linking,
-  Pressable,
-  StyleSheet,
-  View,
-} from 'react-native';
+import {Dimensions, Image, Linking, StyleSheet, View} from 'react-native';
 
 import Button from './Button';
 import Checkbox from './Checkbox';
@@ -51,7 +44,7 @@ export default function UserCard({
         <View style={styles.checkboxPosition}>
           <Checkbox
             onPress={onPressSelectedUser}
-            testID="UserCard.CheckBox"
+            testID={'UserCard.CheckBox' + user.id}
             mode={selected ? 'active' : 'none'}
           />
         </View>
@@ -63,7 +56,7 @@ export default function UserCard({
       </View>
       <View style={styles.buttonContainer}>
         <Button
-          testID="UserCard.ViewProfileButton"
+          testID={'UserCard.ViewProfileButton' + user.id}
           onPress={onPressViewProfile}>
           View profile
         </Button>

@@ -1,10 +1,21 @@
 import {
+  appSearchInput,
+  checkbox,
+  copyButton,
+  deleteButton,
+  flatList,
+  textBeginSearch,
+  textNoFoundSearch,
+  userCard as userCardId,
+} from '../tests/IdentifiersTest';
+import {
   fakeUserResponse,
+  fakeUserResponseWithMaxResults,
   fakeUserResponseWithNoData,
   headers,
   headersWithRateLimit,
   headersWithRateLimit5,
-} from '../utils/mockObjects';
+} from '../tests/mockObjects';
 import {
   fireEvent,
   render,
@@ -17,6 +28,7 @@ import App from '../App';
 import React from 'react';
 import {enableFetchMocks} from 'jest-fetch-mock';
 import fetchMock from 'jest-fetch-mock';
+import text from '../translate/translate';
 
 enableFetchMocks();
 
@@ -39,7 +51,7 @@ it('render the screen, make a search and get the result', async () => {
   const textID = fakeUserResponse.items[0].id.toString(); // this is the ID of our user we are going to see
   const login = fakeUserResponse.items[0].login.toString(); // this is the login of our user we are going to see
   const {getByTestId, queryByText} = render(<App />);
-  const input = getByTestId('App.SearchInput');
+  const input = getByTestId(appSearchInput);
   // Making the insert of the text in the inputText, this going to call our api which is mock with our fakeresponse we put
   fireEvent.changeText(input, searchUser);
 
@@ -63,7 +75,7 @@ it('render the screen, make a search and reset the text field', async () => {
   const textID = fakeUserResponse.items[0].id.toString(); // this is the ID of our user we are going to see
   const login = fakeUserResponse.items[0].login.toString(); // this is the login of our user we are going to see
   const {getByTestId, queryByText, queryByTestId} = render(<App />);
-  const input = getByTestId('App.SearchInput');
+  const input = getByTestId(appSearchInput);
   fireEvent.changeText(input, searchUser);
 
   await waitFor(
@@ -71,7 +83,7 @@ it('render the screen, make a search and reset the text field', async () => {
       // We expect that our id and login are showed
       expect(queryByText(textID)).not.toBeNull();
       expect(queryByText(login)).not.toBeNull();
-      expect(queryByTestId('App.FlatList')).not.toBeNull();
+      expect(queryByTestId(flatList)).not.toBeNull();
     },
     {timeout: 3000},
   );
@@ -84,8 +96,8 @@ it('render the screen, make a search and reset the text field', async () => {
       // Of course, we expect that there are no userCard showed with user infos and having our text component
       expect(queryByText(textID)).toBeNull();
       expect(queryByText(login)).toBeNull();
-      expect(queryByTestId('App.FlatList')).toBeNull();
-      expect(queryByTestId('App.BeginSearch')).not.toBeNull();
+      expect(queryByTestId(flatList)).toBeNull();
+      expect(queryByTestId(textBeginSearch)).not.toBeNull();
     },
     {timeout: 1000},
   );
@@ -99,15 +111,15 @@ it('render the screen, make a search and have no results', async () => {
   });
   const searchUser = 'sebcarre';
   const {getByTestId, queryByTestId} = render(<App />);
-  const input = getByTestId('App.SearchInput');
+  const input = getByTestId(appSearchInput);
   fireEvent.changeText(input, searchUser);
 
   await waitFor(
     () => {
       // We expect that our flatlist is not showed but only our text component to say that there are no results
-      expect(queryByTestId('App.Flatlist')).toBeNull();
-      expect(queryByTestId('App.NoResultsFound')).not.toBeNull();
-      expect(queryByTestId('App.BeginSearch')).toBeNull();
+      expect(queryByTestId(flatList)).toBeNull();
+      expect(queryByTestId(textNoFoundSearch)).not.toBeNull();
+      expect(queryByTestId(textBeginSearch)).toBeNull();
     },
     {timeout: 2000},
   );
@@ -122,14 +134,14 @@ it('render the screen, mock api call headers with 5 calls allowed to check the a
   jest.spyOn(Alert, 'alert');
   const searchUser = 'sebcarre';
   const {getByTestId} = render(<App />);
-  const input = getByTestId('App.SearchInput');
+  const input = getByTestId(appSearchInput);
   fireEvent.changeText(input, searchUser);
 
   await waitFor(
     () => {
       expect(Alert.alert).toHaveBeenCalledWith(
-        'Warning',
-        'You can make 5 more searchs until you have to wait a time and be able to make new searchs',
+        text('warning'),
+        text('alertFiveSearchsRemaining'),
       );
     },
     {timeout: 2000},
@@ -145,15 +157,15 @@ it('render the screen, mock api call headers with no more calls allowed and stat
   jest.spyOn(Alert, 'alert');
   const searchUser = 'sebcarre';
   const {getByTestId} = render(<App />);
-  const input = getByTestId('App.SearchInput');
+  const input = getByTestId(appSearchInput);
   fireEvent.changeText(input, searchUser);
   const time = headersWithRateLimit.get('x-ratelimit-reset');
   const date = new Date(Number(time) * 1000);
   await waitFor(
     () => {
       expect(Alert.alert).toHaveBeenCalledWith(
-        'Error',
-        `You have exceeed the limit of searchs, please wait until : ${date}`,
+        text('error'),
+        `${text('alertNoMoreSearchsRemainingWithDate')} ${date}`,
       );
     },
     {timeout: 2000},
@@ -167,18 +179,22 @@ it('render the screen, make a search, select a user and duplicate', async () => 
   });
   const searchUser = 'sebcarre';
   // This is the user we going to have with the original
-  const resultUser = fakeUserResponse.items[0].login + ' (duplicated)';
+  const resultUser = `${fakeUserResponse.items[0].login} ${text(
+    'duplicatedUser',
+  )}`;
   const textID = fakeUserResponse.items[0].id.toString();
   const {getByTestId, queryByText} = render(<App />);
-  const input = getByTestId('App.SearchInput');
+  const input = getByTestId(appSearchInput);
   fireEvent.changeText(input, searchUser);
 
   await waitFor(
     () => {
       expect(queryByText(textID)).not.toBeNull();
-      const userCard = getByTestId('App.UserCard');
-      fireEvent.press(within(userCard).getByTestId('UserCard.CheckBox'));
-      fireEvent.press(getByTestId('App.CopyButton'));
+      const userCard = getByTestId(userCardId + textID); // we select the right card item
+      fireEvent.press(
+        within(userCard).getByTestId('UserCard.CheckBox' + textID),
+      );
+      fireEvent.press(getByTestId(copyButton));
     },
     {timeout: 3000},
   );
@@ -202,16 +218,18 @@ it('render the screen, make a search, select a user and remove', async () => {
   const resultUser = fakeUserResponse.items[0].login;
   const textID = fakeUserResponse.items[0].id.toString();
   const {getByTestId, queryByText} = render(<App />);
-  const input = getByTestId('App.SearchInput');
+  const input = getByTestId(appSearchInput);
   fireEvent.changeText(input, searchUser);
 
   await waitFor(
     () => {
       expect(queryByText(textID)).not.toBeNull();
       expect(queryByText(resultUser)).not.toBeNull();
-      const userCard = getByTestId('App.UserCard');
-      fireEvent.press(within(userCard).getByTestId('UserCard.CheckBox'));
-      fireEvent.press(getByTestId('App.DeleteButton'));
+      const userCard = getByTestId(userCardId + textID); // we select the right card item
+      fireEvent.press(
+        within(userCard).getByTestId('UserCard.CheckBox' + textID),
+      );
+      fireEvent.press(getByTestId(deleteButton));
     },
     {timeout: 3000},
   );
@@ -223,5 +241,52 @@ it('render the screen, make a search, select a user and remove', async () => {
       expect(queryByText(resultUser)).toBeNull();
     },
     {timeout: 1000},
+  );
+});
+
+it('render the screen, make a search, select every users to be deleted', async () => {
+  fetchMock.mockResponseOnce(JSON.stringify(fakeUserResponseWithMaxResults), {
+    headers: headers,
+    status: 200,
+  });
+  const searchUser = 'sebastien';
+  const {queryByTestId, getByTestId, queryByText} = render(<App />);
+  const input = getByTestId(appSearchInput);
+  fireEvent.changeText(input, searchUser);
+
+  await waitFor(
+    () => {
+      fireEvent.press(getByTestId(checkbox));
+      expect(queryByText(`30 ${text('elementsSelected')}`)).not.toBeNull();
+      fireEvent.press(getByTestId(deleteButton));
+      expect(queryByTestId(flatList)).toBeNull();
+      expect(queryByText(`0 ${text('elementsSelected')}`)).not.toBeNull();
+      expect(queryByTestId(textNoFoundSearch)).not.toBeNull();
+    },
+    {timeout: 3000},
+  );
+});
+
+it('render the screen, make a search, select every users to be duplicated', async () => {
+  fetchMock.mockResponseOnce(JSON.stringify(fakeUserResponseWithMaxResults), {
+    headers: headers,
+    status: 200,
+  });
+  const searchUser = 'sebastien';
+  const {queryByTestId, getByTestId, queryByText} = render(<App />);
+  const input = getByTestId(appSearchInput);
+  fireEvent.changeText(input, searchUser);
+
+  await waitFor(
+    () => {
+      fireEvent.press(getByTestId(checkbox));
+      expect(queryByText(`30 ${text('elementsSelected')}`)).not.toBeNull();
+      fireEvent.press(getByTestId(copyButton));
+      expect(queryByTestId(flatList)).not.toBeNull();
+      fireEvent.press(getByTestId(checkbox));
+      expect(queryByText(`60 ${text('elementsSelected')}`)).not.toBeNull();
+      expect(queryByTestId(textNoFoundSearch)).toBeNull();
+    },
+    {timeout: 3000},
   );
 });

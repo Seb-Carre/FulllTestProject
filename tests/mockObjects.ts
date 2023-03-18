@@ -1,0 +1,813 @@
+export const fakeUserResponse = {
+  incomplete_results: false,
+  items: [
+    {
+      avatar_url: 'https://avatars.githubusercontent.com/u/48792499?v=4',
+      events_url: 'https://api.github.com/users/SebCarret/events{/privacy}',
+      followers_url: 'https://api.github.com/users/SebCarret/followers',
+      following_url:
+        'https://api.github.com/users/SebCarret/following{/other_user}',
+      gists_url: 'https://api.github.com/users/SebCarret/gists{/gist_id}',
+      gravatar_id: '',
+      html_url: 'https://github.com/SebCarret',
+      id: 48792499,
+      login: 'SebCarret',
+      node_id: 'MDQ6VXNlcjQ4NzkyNDk5',
+      organizations_url: 'https://api.github.com/users/SebCarret/orgs',
+      received_events_url:
+        'https://api.github.com/users/SebCarret/received_events',
+      repos_url: 'https://api.github.com/users/SebCarret/repos',
+      score: 1,
+      site_admin: false,
+      starred_url:
+        'https://api.github.com/users/SebCarret/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/SebCarret/subscriptions',
+      type: 'User',
+      url: 'https://api.github.com/users/SebCarret',
+    },
+  ],
+  total_count: 1,
+};
+
+export const fakeUserResponseWithMaxResults = {
+  total_count: 6983,
+  incomplete_results: false,
+  items: [
+    {
+      login: 'sebastien',
+      id: 14598,
+      node_id: 'MDQ6VXNlcjE0NTk4',
+      avatar_url: 'https://avatars.githubusercontent.com/u/14598?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/sebastien',
+      html_url: 'https://github.com/sebastien',
+      followers_url: 'https://api.github.com/users/sebastien/followers',
+      following_url:
+        'https://api.github.com/users/sebastien/following{/other_user}',
+      gists_url: 'https://api.github.com/users/sebastien/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/sebastien/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/sebastien/subscriptions',
+      organizations_url: 'https://api.github.com/users/sebastien/orgs',
+      repos_url: 'https://api.github.com/users/sebastien/repos',
+      events_url: 'https://api.github.com/users/sebastien/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/sebastien/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'sebastienros',
+      id: 1165805,
+      node_id: 'MDQ6VXNlcjExNjU4MDU=',
+      avatar_url: 'https://avatars.githubusercontent.com/u/1165805?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/sebastienros',
+      html_url: 'https://github.com/sebastienros',
+      followers_url: 'https://api.github.com/users/sebastienros/followers',
+      following_url:
+        'https://api.github.com/users/sebastienros/following{/other_user}',
+      gists_url: 'https://api.github.com/users/sebastienros/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/sebastienros/starred{/owner}{/repo}',
+      subscriptions_url:
+        'https://api.github.com/users/sebastienros/subscriptions',
+      organizations_url: 'https://api.github.com/users/sebastienros/orgs',
+      repos_url: 'https://api.github.com/users/sebastienros/repos',
+      events_url: 'https://api.github.com/users/sebastienros/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/sebastienros/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'sebastienblanc',
+      id: 335133,
+      node_id: 'MDQ6VXNlcjMzNTEzMw==',
+      avatar_url: 'https://avatars.githubusercontent.com/u/335133?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/sebastienblanc',
+      html_url: 'https://github.com/sebastienblanc',
+      followers_url: 'https://api.github.com/users/sebastienblanc/followers',
+      following_url:
+        'https://api.github.com/users/sebastienblanc/following{/other_user}',
+      gists_url: 'https://api.github.com/users/sebastienblanc/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/sebastienblanc/starred{/owner}{/repo}',
+      subscriptions_url:
+        'https://api.github.com/users/sebastienblanc/subscriptions',
+      organizations_url: 'https://api.github.com/users/sebastienblanc/orgs',
+      repos_url: 'https://api.github.com/users/sebastienblanc/repos',
+      events_url:
+        'https://api.github.com/users/sebastienblanc/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/sebastienblanc/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'Atinux',
+      id: 904724,
+      node_id: 'MDQ6VXNlcjkwNDcyNA==',
+      avatar_url: 'https://avatars.githubusercontent.com/u/904724?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/Atinux',
+      html_url: 'https://github.com/Atinux',
+      followers_url: 'https://api.github.com/users/Atinux/followers',
+      following_url:
+        'https://api.github.com/users/Atinux/following{/other_user}',
+      gists_url: 'https://api.github.com/users/Atinux/gists{/gist_id}',
+      starred_url: 'https://api.github.com/users/Atinux/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/Atinux/subscriptions',
+      organizations_url: 'https://api.github.com/users/Atinux/orgs',
+      repos_url: 'https://api.github.com/users/Atinux/repos',
+      events_url: 'https://api.github.com/users/Atinux/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/Atinux/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'sebastiencs',
+      id: 5273820,
+      node_id: 'MDQ6VXNlcjUyNzM4MjA=',
+      avatar_url: 'https://avatars.githubusercontent.com/u/5273820?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/sebastiencs',
+      html_url: 'https://github.com/sebastiencs',
+      followers_url: 'https://api.github.com/users/sebastiencs/followers',
+      following_url:
+        'https://api.github.com/users/sebastiencs/following{/other_user}',
+      gists_url: 'https://api.github.com/users/sebastiencs/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/sebastiencs/starred{/owner}{/repo}',
+      subscriptions_url:
+        'https://api.github.com/users/sebastiencs/subscriptions',
+      organizations_url: 'https://api.github.com/users/sebastiencs/orgs',
+      repos_url: 'https://api.github.com/users/sebastiencs/repos',
+      events_url: 'https://api.github.com/users/sebastiencs/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/sebastiencs/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'sdispater',
+      id: 555648,
+      node_id: 'MDQ6VXNlcjU1NTY0OA==',
+      avatar_url: 'https://avatars.githubusercontent.com/u/555648?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/sdispater',
+      html_url: 'https://github.com/sdispater',
+      followers_url: 'https://api.github.com/users/sdispater/followers',
+      following_url:
+        'https://api.github.com/users/sdispater/following{/other_user}',
+      gists_url: 'https://api.github.com/users/sdispater/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/sdispater/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/sdispater/subscriptions',
+      organizations_url: 'https://api.github.com/users/sdispater/orgs',
+      repos_url: 'https://api.github.com/users/sdispater/repos',
+      events_url: 'https://api.github.com/users/sdispater/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/sdispater/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'SebastienGllmt',
+      id: 2608559,
+      node_id: 'MDQ6VXNlcjI2MDg1NTk=',
+      avatar_url: 'https://avatars.githubusercontent.com/u/2608559?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/SebastienGllmt',
+      html_url: 'https://github.com/SebastienGllmt',
+      followers_url: 'https://api.github.com/users/SebastienGllmt/followers',
+      following_url:
+        'https://api.github.com/users/SebastienGllmt/following{/other_user}',
+      gists_url: 'https://api.github.com/users/SebastienGllmt/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/SebastienGllmt/starred{/owner}{/repo}',
+      subscriptions_url:
+        'https://api.github.com/users/SebastienGllmt/subscriptions',
+      organizations_url: 'https://api.github.com/users/SebastienGllmt/orgs',
+      repos_url: 'https://api.github.com/users/SebastienGllmt/repos',
+      events_url:
+        'https://api.github.com/users/SebastienGllmt/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/SebastienGllmt/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'scolladon',
+      id: 522422,
+      node_id: 'MDQ6VXNlcjUyMjQyMg==',
+      avatar_url: 'https://avatars.githubusercontent.com/u/522422?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/scolladon',
+      html_url: 'https://github.com/scolladon',
+      followers_url: 'https://api.github.com/users/scolladon/followers',
+      following_url:
+        'https://api.github.com/users/scolladon/following{/other_user}',
+      gists_url: 'https://api.github.com/users/scolladon/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/scolladon/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/scolladon/subscriptions',
+      organizations_url: 'https://api.github.com/users/scolladon/orgs',
+      repos_url: 'https://api.github.com/users/scolladon/repos',
+      events_url: 'https://api.github.com/users/scolladon/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/scolladon/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'ssaunier',
+      id: 414418,
+      node_id: 'MDQ6VXNlcjQxNDQxOA==',
+      avatar_url: 'https://avatars.githubusercontent.com/u/414418?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/ssaunier',
+      html_url: 'https://github.com/ssaunier',
+      followers_url: 'https://api.github.com/users/ssaunier/followers',
+      following_url:
+        'https://api.github.com/users/ssaunier/following{/other_user}',
+      gists_url: 'https://api.github.com/users/ssaunier/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/ssaunier/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/ssaunier/subscriptions',
+      organizations_url: 'https://api.github.com/users/ssaunier/orgs',
+      repos_url: 'https://api.github.com/users/ssaunier/repos',
+      events_url: 'https://api.github.com/users/ssaunier/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/ssaunier/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'slorber',
+      id: 749374,
+      node_id: 'MDQ6VXNlcjc0OTM3NA==',
+      avatar_url: 'https://avatars.githubusercontent.com/u/749374?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/slorber',
+      html_url: 'https://github.com/slorber',
+      followers_url: 'https://api.github.com/users/slorber/followers',
+      following_url:
+        'https://api.github.com/users/slorber/following{/other_user}',
+      gists_url: 'https://api.github.com/users/slorber/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/slorber/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/slorber/subscriptions',
+      organizations_url: 'https://api.github.com/users/slorber/orgs',
+      repos_url: 'https://api.github.com/users/slorber/repos',
+      events_url: 'https://api.github.com/users/slorber/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/slorber/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'sdeleuze',
+      id: 141109,
+      node_id: 'MDQ6VXNlcjE0MTEwOQ==',
+      avatar_url: 'https://avatars.githubusercontent.com/u/141109?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/sdeleuze',
+      html_url: 'https://github.com/sdeleuze',
+      followers_url: 'https://api.github.com/users/sdeleuze/followers',
+      following_url:
+        'https://api.github.com/users/sdeleuze/following{/other_user}',
+      gists_url: 'https://api.github.com/users/sdeleuze/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/sdeleuze/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/sdeleuze/subscriptions',
+      organizations_url: 'https://api.github.com/users/sdeleuze/orgs',
+      repos_url: 'https://api.github.com/users/sdeleuze/repos',
+      events_url: 'https://api.github.com/users/sdeleuze/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/sdeleuze/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'sbinet',
+      id: 1070920,
+      node_id: 'MDQ6VXNlcjEwNzA5MjA=',
+      avatar_url: 'https://avatars.githubusercontent.com/u/1070920?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/sbinet',
+      html_url: 'https://github.com/sbinet',
+      followers_url: 'https://api.github.com/users/sbinet/followers',
+      following_url:
+        'https://api.github.com/users/sbinet/following{/other_user}',
+      gists_url: 'https://api.github.com/users/sbinet/gists{/gist_id}',
+      starred_url: 'https://api.github.com/users/sbinet/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/sbinet/subscriptions',
+      organizations_url: 'https://api.github.com/users/sbinet/orgs',
+      repos_url: 'https://api.github.com/users/sbinet/repos',
+      events_url: 'https://api.github.com/users/sbinet/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/sbinet/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'deepnight',
+      id: 1671695,
+      node_id: 'MDQ6VXNlcjE2NzE2OTU=',
+      avatar_url: 'https://avatars.githubusercontent.com/u/1671695?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/deepnight',
+      html_url: 'https://github.com/deepnight',
+      followers_url: 'https://api.github.com/users/deepnight/followers',
+      following_url:
+        'https://api.github.com/users/deepnight/following{/other_user}',
+      gists_url: 'https://api.github.com/users/deepnight/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/deepnight/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/deepnight/subscriptions',
+      organizations_url: 'https://api.github.com/users/deepnight/orgs',
+      repos_url: 'https://api.github.com/users/deepnight/repos',
+      events_url: 'https://api.github.com/users/deepnight/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/deepnight/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'sebastienlevert',
+      id: 7620955,
+      node_id: 'MDQ6VXNlcjc2MjA5NTU=',
+      avatar_url: 'https://avatars.githubusercontent.com/u/7620955?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/sebastienlevert',
+      html_url: 'https://github.com/sebastienlevert',
+      followers_url: 'https://api.github.com/users/sebastienlevert/followers',
+      following_url:
+        'https://api.github.com/users/sebastienlevert/following{/other_user}',
+      gists_url: 'https://api.github.com/users/sebastienlevert/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/sebastienlevert/starred{/owner}{/repo}',
+      subscriptions_url:
+        'https://api.github.com/users/sebastienlevert/subscriptions',
+      organizations_url: 'https://api.github.com/users/sebastienlevert/orgs',
+      repos_url: 'https://api.github.com/users/sebastienlevert/repos',
+      events_url:
+        'https://api.github.com/users/sebastienlevert/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/sebastienlevert/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'SebastienWae',
+      id: 55792872,
+      node_id: 'MDQ6VXNlcjU1NzkyODcy',
+      avatar_url: 'https://avatars.githubusercontent.com/u/55792872?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/SebastienWae',
+      html_url: 'https://github.com/SebastienWae',
+      followers_url: 'https://api.github.com/users/SebastienWae/followers',
+      following_url:
+        'https://api.github.com/users/SebastienWae/following{/other_user}',
+      gists_url: 'https://api.github.com/users/SebastienWae/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/SebastienWae/starred{/owner}{/repo}',
+      subscriptions_url:
+        'https://api.github.com/users/SebastienWae/subscriptions',
+      organizations_url: 'https://api.github.com/users/SebastienWae/orgs',
+      repos_url: 'https://api.github.com/users/SebastienWae/repos',
+      events_url: 'https://api.github.com/users/SebastienWae/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/SebastienWae/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'sebastienwindal',
+      id: 2080714,
+      node_id: 'MDQ6VXNlcjIwODA3MTQ=',
+      avatar_url: 'https://avatars.githubusercontent.com/u/2080714?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/sebastienwindal',
+      html_url: 'https://github.com/sebastienwindal',
+      followers_url: 'https://api.github.com/users/sebastienwindal/followers',
+      following_url:
+        'https://api.github.com/users/sebastienwindal/following{/other_user}',
+      gists_url: 'https://api.github.com/users/sebastienwindal/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/sebastienwindal/starred{/owner}{/repo}',
+      subscriptions_url:
+        'https://api.github.com/users/sebastienwindal/subscriptions',
+      organizations_url: 'https://api.github.com/users/sebastienwindal/orgs',
+      repos_url: 'https://api.github.com/users/sebastienwindal/repos',
+      events_url:
+        'https://api.github.com/users/sebastienwindal/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/sebastienwindal/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'rezpe',
+      id: 765458,
+      node_id: 'MDQ6VXNlcjc2NTQ1OA==',
+      avatar_url: 'https://avatars.githubusercontent.com/u/765458?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/rezpe',
+      html_url: 'https://github.com/rezpe',
+      followers_url: 'https://api.github.com/users/rezpe/followers',
+      following_url:
+        'https://api.github.com/users/rezpe/following{/other_user}',
+      gists_url: 'https://api.github.com/users/rezpe/gists{/gist_id}',
+      starred_url: 'https://api.github.com/users/rezpe/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/rezpe/subscriptions',
+      organizations_url: 'https://api.github.com/users/rezpe/orgs',
+      repos_url: 'https://api.github.com/users/rezpe/repos',
+      events_url: 'https://api.github.com/users/rezpe/events{/privacy}',
+      received_events_url: 'https://api.github.com/users/rezpe/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'sjrd',
+      id: 535934,
+      node_id: 'MDQ6VXNlcjUzNTkzNA==',
+      avatar_url: 'https://avatars.githubusercontent.com/u/535934?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/sjrd',
+      html_url: 'https://github.com/sjrd',
+      followers_url: 'https://api.github.com/users/sjrd/followers',
+      following_url: 'https://api.github.com/users/sjrd/following{/other_user}',
+      gists_url: 'https://api.github.com/users/sjrd/gists{/gist_id}',
+      starred_url: 'https://api.github.com/users/sjrd/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/sjrd/subscriptions',
+      organizations_url: 'https://api.github.com/users/sjrd/orgs',
+      repos_url: 'https://api.github.com/users/sjrd/repos',
+      events_url: 'https://api.github.com/users/sjrd/events{/privacy}',
+      received_events_url: 'https://api.github.com/users/sjrd/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'scastiel',
+      id: 301948,
+      node_id: 'MDQ6VXNlcjMwMTk0OA==',
+      avatar_url: 'https://avatars.githubusercontent.com/u/301948?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/scastiel',
+      html_url: 'https://github.com/scastiel',
+      followers_url: 'https://api.github.com/users/scastiel/followers',
+      following_url:
+        'https://api.github.com/users/scastiel/following{/other_user}',
+      gists_url: 'https://api.github.com/users/scastiel/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/scastiel/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/scastiel/subscriptions',
+      organizations_url: 'https://api.github.com/users/scastiel/orgs',
+      repos_url: 'https://api.github.com/users/scastiel/repos',
+      events_url: 'https://api.github.com/users/scastiel/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/scastiel/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'sailro',
+      id: 638167,
+      node_id: 'MDQ6VXNlcjYzODE2Nw==',
+      avatar_url: 'https://avatars.githubusercontent.com/u/638167?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/sailro',
+      html_url: 'https://github.com/sailro',
+      followers_url: 'https://api.github.com/users/sailro/followers',
+      following_url:
+        'https://api.github.com/users/sailro/following{/other_user}',
+      gists_url: 'https://api.github.com/users/sailro/gists{/gist_id}',
+      starred_url: 'https://api.github.com/users/sailro/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/sailro/subscriptions',
+      organizations_url: 'https://api.github.com/users/sailro/orgs',
+      repos_url: 'https://api.github.com/users/sailro/repos',
+      events_url: 'https://api.github.com/users/sailro/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/sailro/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'sebcrozet',
+      id: 1734958,
+      node_id: 'MDQ6VXNlcjE3MzQ5NTg=',
+      avatar_url: 'https://avatars.githubusercontent.com/u/1734958?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/sebcrozet',
+      html_url: 'https://github.com/sebcrozet',
+      followers_url: 'https://api.github.com/users/sebcrozet/followers',
+      following_url:
+        'https://api.github.com/users/sebcrozet/following{/other_user}',
+      gists_url: 'https://api.github.com/users/sebcrozet/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/sebcrozet/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/sebcrozet/subscriptions',
+      organizations_url: 'https://api.github.com/users/sebcrozet/orgs',
+      repos_url: 'https://api.github.com/users/sebcrozet/repos',
+      events_url: 'https://api.github.com/users/sebcrozet/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/sebcrozet/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'sebastienrousseau',
+      id: 1394998,
+      node_id: 'MDQ6VXNlcjEzOTQ5OTg=',
+      avatar_url: 'https://avatars.githubusercontent.com/u/1394998?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/sebastienrousseau',
+      html_url: 'https://github.com/sebastienrousseau',
+      followers_url: 'https://api.github.com/users/sebastienrousseau/followers',
+      following_url:
+        'https://api.github.com/users/sebastienrousseau/following{/other_user}',
+      gists_url:
+        'https://api.github.com/users/sebastienrousseau/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/sebastienrousseau/starred{/owner}{/repo}',
+      subscriptions_url:
+        'https://api.github.com/users/sebastienrousseau/subscriptions',
+      organizations_url: 'https://api.github.com/users/sebastienrousseau/orgs',
+      repos_url: 'https://api.github.com/users/sebastienrousseau/repos',
+      events_url:
+        'https://api.github.com/users/sebastienrousseau/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/sebastienrousseau/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'lorem--ipsum',
+      id: 1224709,
+      node_id: 'MDQ6VXNlcjEyMjQ3MDk=',
+      avatar_url: 'https://avatars.githubusercontent.com/u/1224709?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/lorem--ipsum',
+      html_url: 'https://github.com/lorem--ipsum',
+      followers_url: 'https://api.github.com/users/lorem--ipsum/followers',
+      following_url:
+        'https://api.github.com/users/lorem--ipsum/following{/other_user}',
+      gists_url: 'https://api.github.com/users/lorem--ipsum/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/lorem--ipsum/starred{/owner}{/repo}',
+      subscriptions_url:
+        'https://api.github.com/users/lorem--ipsum/subscriptions',
+      organizations_url: 'https://api.github.com/users/lorem--ipsum/orgs',
+      repos_url: 'https://api.github.com/users/lorem--ipsum/repos',
+      events_url: 'https://api.github.com/users/lorem--ipsum/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/lorem--ipsum/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'sebastienfilion',
+      id: 1426491,
+      node_id: 'MDQ6VXNlcjE0MjY0OTE=',
+      avatar_url: 'https://avatars.githubusercontent.com/u/1426491?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/sebastienfilion',
+      html_url: 'https://github.com/sebastienfilion',
+      followers_url: 'https://api.github.com/users/sebastienfilion/followers',
+      following_url:
+        'https://api.github.com/users/sebastienfilion/following{/other_user}',
+      gists_url: 'https://api.github.com/users/sebastienfilion/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/sebastienfilion/starred{/owner}{/repo}',
+      subscriptions_url:
+        'https://api.github.com/users/sebastienfilion/subscriptions',
+      organizations_url: 'https://api.github.com/users/sebastienfilion/orgs',
+      repos_url: 'https://api.github.com/users/sebastienfilion/repos',
+      events_url:
+        'https://api.github.com/users/sebastienfilion/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/sebastienfilion/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'sebsto',
+      id: 401798,
+      node_id: 'MDQ6VXNlcjQwMTc5OA==',
+      avatar_url: 'https://avatars.githubusercontent.com/u/401798?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/sebsto',
+      html_url: 'https://github.com/sebsto',
+      followers_url: 'https://api.github.com/users/sebsto/followers',
+      following_url:
+        'https://api.github.com/users/sebsto/following{/other_user}',
+      gists_url: 'https://api.github.com/users/sebsto/gists{/gist_id}',
+      starred_url: 'https://api.github.com/users/sebsto/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/sebsto/subscriptions',
+      organizations_url: 'https://api.github.com/users/sebsto/orgs',
+      repos_url: 'https://api.github.com/users/sebsto/repos',
+      events_url: 'https://api.github.com/users/sebsto/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/sebsto/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'Sebastien-Ahkrin',
+      id: 30870051,
+      node_id: 'MDQ6VXNlcjMwODcwMDUx',
+      avatar_url: 'https://avatars.githubusercontent.com/u/30870051?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/Sebastien-Ahkrin',
+      html_url: 'https://github.com/Sebastien-Ahkrin',
+      followers_url: 'https://api.github.com/users/Sebastien-Ahkrin/followers',
+      following_url:
+        'https://api.github.com/users/Sebastien-Ahkrin/following{/other_user}',
+      gists_url:
+        'https://api.github.com/users/Sebastien-Ahkrin/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/Sebastien-Ahkrin/starred{/owner}{/repo}',
+      subscriptions_url:
+        'https://api.github.com/users/Sebastien-Ahkrin/subscriptions',
+      organizations_url: 'https://api.github.com/users/Sebastien-Ahkrin/orgs',
+      repos_url: 'https://api.github.com/users/Sebastien-Ahkrin/repos',
+      events_url:
+        'https://api.github.com/users/Sebastien-Ahkrin/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/Sebastien-Ahkrin/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'SebastienElet',
+      id: 541937,
+      node_id: 'MDQ6VXNlcjU0MTkzNw==',
+      avatar_url: 'https://avatars.githubusercontent.com/u/541937?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/SebastienElet',
+      html_url: 'https://github.com/SebastienElet',
+      followers_url: 'https://api.github.com/users/SebastienElet/followers',
+      following_url:
+        'https://api.github.com/users/SebastienElet/following{/other_user}',
+      gists_url: 'https://api.github.com/users/SebastienElet/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/SebastienElet/starred{/owner}{/repo}',
+      subscriptions_url:
+        'https://api.github.com/users/SebastienElet/subscriptions',
+      organizations_url: 'https://api.github.com/users/SebastienElet/orgs',
+      repos_url: 'https://api.github.com/users/SebastienElet/repos',
+      events_url: 'https://api.github.com/users/SebastienElet/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/SebastienElet/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'andrivet',
+      id: 981049,
+      node_id: 'MDQ6VXNlcjk4MTA0OQ==',
+      avatar_url: 'https://avatars.githubusercontent.com/u/981049?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/andrivet',
+      html_url: 'https://github.com/andrivet',
+      followers_url: 'https://api.github.com/users/andrivet/followers',
+      following_url:
+        'https://api.github.com/users/andrivet/following{/other_user}',
+      gists_url: 'https://api.github.com/users/andrivet/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/andrivet/starred{/owner}{/repo}',
+      subscriptions_url: 'https://api.github.com/users/andrivet/subscriptions',
+      organizations_url: 'https://api.github.com/users/andrivet/orgs',
+      repos_url: 'https://api.github.com/users/andrivet/repos',
+      events_url: 'https://api.github.com/users/andrivet/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/andrivet/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'sebastienbeau',
+      id: 1164578,
+      node_id: 'MDQ6VXNlcjExNjQ1Nzg=',
+      avatar_url: 'https://avatars.githubusercontent.com/u/1164578?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/sebastienbeau',
+      html_url: 'https://github.com/sebastienbeau',
+      followers_url: 'https://api.github.com/users/sebastienbeau/followers',
+      following_url:
+        'https://api.github.com/users/sebastienbeau/following{/other_user}',
+      gists_url: 'https://api.github.com/users/sebastienbeau/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/sebastienbeau/starred{/owner}{/repo}',
+      subscriptions_url:
+        'https://api.github.com/users/sebastienbeau/subscriptions',
+      organizations_url: 'https://api.github.com/users/sebastienbeau/orgs',
+      repos_url: 'https://api.github.com/users/sebastienbeau/repos',
+      events_url: 'https://api.github.com/users/sebastienbeau/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/sebastienbeau/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+    {
+      login: 'sebastientourbier',
+      id: 22279770,
+      node_id: 'MDQ6VXNlcjIyMjc5Nzcw',
+      avatar_url: 'https://avatars.githubusercontent.com/u/22279770?v=4',
+      gravatar_id: '',
+      url: 'https://api.github.com/users/sebastientourbier',
+      html_url: 'https://github.com/sebastientourbier',
+      followers_url: 'https://api.github.com/users/sebastientourbier/followers',
+      following_url:
+        'https://api.github.com/users/sebastientourbier/following{/other_user}',
+      gists_url:
+        'https://api.github.com/users/sebastientourbier/gists{/gist_id}',
+      starred_url:
+        'https://api.github.com/users/sebastientourbier/starred{/owner}{/repo}',
+      subscriptions_url:
+        'https://api.github.com/users/sebastientourbier/subscriptions',
+      organizations_url: 'https://api.github.com/users/sebastientourbier/orgs',
+      repos_url: 'https://api.github.com/users/sebastientourbier/repos',
+      events_url:
+        'https://api.github.com/users/sebastientourbier/events{/privacy}',
+      received_events_url:
+        'https://api.github.com/users/sebastientourbier/received_events',
+      type: 'User',
+      site_admin: false,
+      score: 1.0,
+    },
+  ],
+};
+
+export const headers = new Headers({
+  'x-ratelimit-limit': '10',
+  'x-ratelimit-remaining': '10',
+  'x-ratelimit-reset': '1678640067',
+  'x-ratelimit-resource': 'search',
+  'x-ratelimit-used': '10',
+  'x-xss-protection': '1; mode=block',
+});
+
+export const fakeUserResponseWithNoData = {
+  incomplete_results: false,
+  items: [],
+  total_count: 1,
+};
+export const headersWithRateLimit5 = new Headers({
+  'x-ratelimit-limit': '10',
+  'x-ratelimit-remaining': '5',
+  'x-ratelimit-reset': '1678640067',
+  'x-ratelimit-resource': 'search',
+  'x-ratelimit-used': '10',
+  'x-xss-protection': '1; mode=block',
+});
+
+export const headersWithRateLimit = new Headers({
+  'x-ratelimit-limit': '10',
+  'x-ratelimit-remaining': '0',
+  'x-ratelimit-reset': '1678640067',
+  'x-ratelimit-resource': 'search',
+  'x-ratelimit-used': '10',
+  'x-xss-protection': '1; mode=block',
+});
+
+export const headersWithRateLimitAndNoResetTime = new Headers({
+  'x-ratelimit-limit': '10',
+  'x-ratelimit-remaining': '0',
+  'x-ratelimit-resource': 'search',
+  'x-ratelimit-used': '10',
+  'x-xss-protection': '1; mode=block',
+});

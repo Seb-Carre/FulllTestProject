@@ -50,7 +50,7 @@ exports[`render the Flatlist with our userCard as snapShot excepted 1`] = `
             "width": "100%",
           }
         }
-        testID="App.UserCard"
+        testID="userCard"
       >
         <View
           style={
@@ -110,7 +110,7 @@ exports[`render the Flatlist with our userCard as snapShot excepted 1`] = `
                   "width": 20,
                 }
               }
-              testID="UserCard.CheckBox"
+              testID="UserCard.CheckBox404"
             >
               <Image
                 source={
@@ -225,7 +225,7 @@ exports[`render the Flatlist with our userCard as snapShot excepted 1`] = `
                 "paddingVertical": 20,
               }
             }
-            testID="UserCard.ViewProfileButton"
+            testID="UserCard.ViewProfileButton404"
           >
             <Text
               style={
@@ -258,7 +258,7 @@ exports[`render the Flatlist with our userCard as snapShot excepted 1`] = `
             "width": "100%",
           }
         }
-        testID="App.UserCard"
+        testID="userCard"
       >
         <View
           style={
@@ -318,7 +318,7 @@ exports[`render the Flatlist with our userCard as snapShot excepted 1`] = `
                   "width": 20,
                 }
               }
-              testID="UserCard.CheckBox"
+              testID="UserCard.CheckBox500"
             >
               <Image
                 source={
@@ -433,7 +433,7 @@ exports[`render the Flatlist with our userCard as snapShot excepted 1`] = `
                 "paddingVertical": 20,
               }
             }
-            testID="UserCard.ViewProfileButton"
+            testID="UserCard.ViewProfileButton500"
           >
             <Text
               style={

@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#44a1f8',
     justifyContent: 'center',
   },
-  multiple: {height: 3, backgroundColor: 'black'},
+  multiple: {height: 2, backgroundColor: 'black'},
   active: {
     height: 13,
     width: 13,

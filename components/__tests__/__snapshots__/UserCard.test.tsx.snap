@@ -70,7 +70,7 @@ exports[`render the user card as snapShot expected 1`] = `
             "width": 20,
           }
         }
-        testID="UserCard.CheckBox"
+        testID="UserCard.CheckBox404"
       >
         <Image
           source={
@@ -185,7 +185,7 @@ exports[`render the user card as snapShot expected 1`] = `
           "paddingVertical": 20,
         }
       }
-      testID="UserCard.ViewProfileButton"
+      testID="UserCard.ViewProfileButton404"
     >
       <Text
         style={

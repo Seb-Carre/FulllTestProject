@@ -49,15 +49,19 @@ exports[`render the screen as snapShot expected 1`] = `
       <TextInput
         onChangeText={[Function]}
         placeholder="Search input"
+        placeholderTextColor="black"
         style={
           {
             "backgroundColor": "lightgray",
             "borderRadius": 5,
+            "fontSize": 17,
+            "fontWeight": "600",
             "marginBottom": 24,
             "marginLeft": 16,
             "marginRight": 16,
             "marginTop": 24,
             "padding": 20,
+            "paddingLeft": 90,
           }
         }
         testID="App.SearchInput"

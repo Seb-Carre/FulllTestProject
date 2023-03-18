@@ -1,7 +1,7 @@
-import {fakeUserResponse, headers} from '../utils/mockObjects';
+import {fakeUserResponse, headers} from '../tests/mockObjects';
 
 import {enableFetchMocks} from 'jest-fetch-mock';
-import {getUsersBySearchText} from '../services/api';
+import {getUsersBySearchText} from '../services/apiRequests';
 
 enableFetchMocks();
 

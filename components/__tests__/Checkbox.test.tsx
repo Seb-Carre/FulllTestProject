@@ -5,7 +5,6 @@ import React from 'react';
 
 it('render the checkbox with active mode as snapShot we expected', () => {
   const {toJSON} = render(<Checkbox onPress={() => {}} mode="active" />);
-
   expect(toJSON()).toMatchSnapshot();
 });
 

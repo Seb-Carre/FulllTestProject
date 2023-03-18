@@ -26,7 +26,7 @@ it('render the Flatlist with our userCard as snapShot excepted', () => {
       keyExtractor={(user, index) => index.toString()}
       renderItem={({item}) => (
         <UserCard
-          testID="App.UserCard"
+          testID="userCard"
           user={item}
           setSelected={() => {}}
           selected={true}
