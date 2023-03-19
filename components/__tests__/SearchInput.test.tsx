@@ -19,6 +19,7 @@ it('render the searchInput and check the placeholder', () => {
     />,
   );
   const input = getByTestId('searchInput');
+  // We want be to sure that our placeholder is the right one
   expect(input.props.placeholder).toBe(placeholder);
 });
 
@@ -31,6 +32,6 @@ it('render the searchInput and change the text', () => {
   );
   const input = getByTestId('searchInput');
   fireEvent.changeText(input, text);
-  // By onChangeText, we know if the text has changed !
+  // By onChangeText, we know if the text has changed and we know that our mock function has been called !
   expect(mockFunction).toBeCalled();
 });

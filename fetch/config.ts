@@ -28,7 +28,7 @@ export default async function callAPI(method: string, url: string) {
       );
       // We'll show a warning if the user is approaching the rate limit
       if (remainingRequests === 5) {
-        Alert.alert(text('warning'), text('alertFiveSearchsRemaining'));
+        Alert.alert(text('warning'), text('alertFiveRequestsRemaining'));
       }
     }
     const data = await response.json();
@@ -48,10 +48,10 @@ export default async function callAPI(method: string, url: string) {
         const date = new Date(Number(time) * 1000);
         Alert.alert(
           text('error'),
-          `${text('alertNoMoreSearchsRemainingWithDate')} ${date}`,
+          `${text('alertNoMoreRequestsRemainingWithDate')} ${date}`,
         );
       } else {
-        Alert.alert(text('error'), text('alertNoMoreSearchsRemaining'));
+        Alert.alert(text('error'), text('alertNoMoreRequestsRemaining'));
       }
     } else {
       // Others requests errors will be showed in this alert

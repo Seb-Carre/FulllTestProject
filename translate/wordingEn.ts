@@ -17,11 +17,11 @@ export const wordingEn: Record<string, string> = {
   defaultTextPlaceholder: 'Search input',
 
   // Fetch
-  alertFiveSearchsRemaining:
-    'You can make 5 more searchs until you have to wait a time and be able to make new searchs',
-  alertNoMoreSearchsRemainingWithDate:
-    'You have exceeed the limit of searchs, please wait until :',
-  alertNoMoreSearchsRemaining:
-    'You have exceeed the limit of searchs, take a break and try again',
+  alertFiveRequestsRemaining:
+    'You can make 5 more requests until you have to wait a time and be able to make new requests',
+  alertNoMoreRequestsRemainingWithDate:
+    'You have exceeed the limit of requests, please wait until :',
+  alertNoMoreRequestsRemaining:
+    'You have exceeed the limit of requests, take a break and try again',
   alertErrorGenericMessage: 'A error has occured, with a code error',
 };

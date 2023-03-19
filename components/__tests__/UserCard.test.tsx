@@ -12,6 +12,13 @@ const user: User = {
   html_url: 'https://github.com/Seb-Carre',
 };
 const setSelectedMock = jest.fn();
+
+beforeEach(() => {
+  // We have declared setSelectedMock globally
+  // So clear the mock before each test case is important to know that every test we are going to do haven't the result from previous test
+  setSelectedMock.mockClear();
+});
+
 const selected = true;
 it('render the user card as snapShot expected', () => {
   const {toJSON} = render(
@@ -39,6 +46,7 @@ it('render the user card and click on the checkBox', () => {
 
   // Making a press event and our mock function to be called
   fireEvent.press(getByTestId('UserCard.CheckBox' + user.id));
+  // With the press, we know that our function has been called !
   expect(setSelectedMock).toBeCalled();
 });
 
@@ -48,7 +56,7 @@ it('render the user card and click on view profile button', () => {
   const {getByTestId} = render(
     <UserCard user={user} setSelected={setSelectedMock} selected={selected} />,
   );
-
+  // We are pressing the right userCard with his id !
   fireEvent.press(getByTestId('UserCard.ViewProfileButton' + user.id));
   // We expect that the url is called is the url html.url to see his profile
   expect(spy).toHaveBeenCalledWith(user.html_url);

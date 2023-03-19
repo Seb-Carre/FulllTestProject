@@ -25,5 +25,6 @@ it('renders the icon button and click', () => {
 
   // Making a press event on our IconButton
   fireEvent.press(button);
+  // With the press, we know that our function has been called !
   expect(mockFunction).toBeCalled();
 });

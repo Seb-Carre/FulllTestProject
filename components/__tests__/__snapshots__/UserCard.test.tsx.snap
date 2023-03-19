@@ -61,14 +61,18 @@ exports[`render the user card as snapShot expected 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          {
-            "backgroundColor": "#44a1f8",
-            "borderRadius": 4,
-            "borderWidth": 4,
-            "height": 20,
-            "justifyContent": "center",
-            "width": 20,
-          }
+          [
+            {
+              "borderRadius": 4,
+              "borderWidth": 4,
+              "height": 20,
+              "justifyContent": "center",
+              "width": 20,
+            },
+            {
+              "backgroundColor": "#44a1f8",
+            },
+          ]
         }
         testID="UserCard.CheckBox404"
       >

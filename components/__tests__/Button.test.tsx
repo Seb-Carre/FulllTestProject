@@ -24,5 +24,6 @@ it('renders the button with the text correctly and click', () => {
 
   // Making a press event on our button
   fireEvent.press(button);
+  // With the press, we know that our function has been called !
   expect(mockFunction).toBeCalled();
 });

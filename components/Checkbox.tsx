@@ -17,9 +17,19 @@ export default function Checkbox({mode, onPress, testID}: CheckboxParams) {
   // CheckMark icon to show when active mode is enabled
   const checkMark = '../assets/images/check-mark.png';
   return (
-    <Pressable onPress={onPress} testID={testID} style={styles.container}>
+    <Pressable
+      onPress={onPress}
+      testID={testID}
+      style={[
+        styles.container,
+        mode === 'active' || mode === 'multiple'
+          ? styles.containerActive
+          : null,
+      ]}>
       {/* We are going to take the corresponding style we made in stylesheet styles, active mode is the only one mode which not made with styling */}
-      {mode !== 'active' && <View testID='Checkbox.viewStyle' style={styles[mode]} />}
+      {mode !== 'active' && (
+        <View testID="Checkbox.viewStyle" style={styles[mode]} />
+      )}
       {/* if active, the need to use the icon asset image to show it, this is the only mode which is different */}
       {mode === 'active' && (
         <Icon
@@ -38,10 +48,10 @@ const styles = StyleSheet.create({
     width: 20,
     borderWidth: 4,
     borderRadius: 4,
-    backgroundColor: '#44a1f8',
     justifyContent: 'center',
   },
-  multiple: {height: 2, backgroundColor: 'black'},
+  containerActive: {backgroundColor: '#44a1f8'},
+  multiple: {height: 3, backgroundColor: 'black'},
   active: {
     height: 13,
     width: 13,

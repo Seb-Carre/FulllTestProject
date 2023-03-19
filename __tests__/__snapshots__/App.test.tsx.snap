@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render the screen as snapShot expected 1`] = `
+exports[`test the App.tsx Functional Component render the screen as snapShot expected 1`] = `
 <RCTSafeAreaView
   style={
     {
@@ -61,7 +61,7 @@ exports[`render the screen as snapShot expected 1`] = `
             "marginRight": 16,
             "marginTop": 24,
             "padding": 20,
-            "paddingLeft": 90,
+            "paddingLeft": 150,
           }
         }
         testID="App.SearchInput"
@@ -108,14 +108,16 @@ exports[`render the screen as snapShot expected 1`] = `
           onResponderTerminationRequest={[Function]}
           onStartShouldSetResponder={[Function]}
           style={
-            {
-              "backgroundColor": "#44a1f8",
-              "borderRadius": 4,
-              "borderWidth": 4,
-              "height": 20,
-              "justifyContent": "center",
-              "width": 20,
-            }
+            [
+              {
+                "borderRadius": 4,
+                "borderWidth": 4,
+                "height": 20,
+                "justifyContent": "center",
+                "width": 20,
+              },
+              null,
+            ]
           }
           testID="App.CheckBox"
         >

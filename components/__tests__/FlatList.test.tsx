@@ -22,7 +22,7 @@ const users: User[] = [
 it('render the Flatlist with our userCard as snapShot excepted', () => {
   const {toJSON} = render(
     <FlatList
-      data={users}
+      data={users} // insert the fake data we made
       keyExtractor={(user, index) => index.toString()}
       renderItem={({item}) => (
         <UserCard

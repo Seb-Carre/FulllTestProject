@@ -1,4 +1,4 @@
-import {StyleSheet, TextInput, TextInputProps} from 'react-native';
+import {Dimensions, StyleSheet, TextInput, TextInputProps} from 'react-native';
 
 import React from 'react';
 import text from '../translate/translate';
@@ -28,6 +28,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightgray',
     fontWeight: '600',
     fontSize: 17,
-    paddingLeft: 90,
+    paddingLeft: Dimensions.get('screen').width * 0.2, // to make sure that on a little and big device, it will be equivalent
   },
 });
